@@ -21,7 +21,7 @@ const WeatherCard = ({ location, search, data, setLocation }) => {
                 {data.name},{data.sys.country}
               </p>
               <h2
-                className={`text-7xl backdrop-blur-md border-x-red-400 flex justify-center items-center p-4 ${
+                className={`text-7xl flex justify-center items-center p-4 ${
                   Math.round(data.main.temp) >= 20
                     ? "text-textHot"
                     : "text-textCold"

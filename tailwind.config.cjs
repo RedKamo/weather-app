@@ -15,7 +15,7 @@ module.exports = {
     extend: {
       backgroundImage: theme => (
         {
-          'background': "url('https://source.unsplash.com/collection/3721313/1600x900')",
+          'background': "url('https://source.unsplash.com/collection/977392/1600x900')",
         
           'grad': "url('./src/assets/grad.png')",
           'day': "url('./src/assets/as.jpg')",
