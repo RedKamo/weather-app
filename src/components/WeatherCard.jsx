@@ -5,7 +5,7 @@ import EnterKey from "../assets/enkey.png";
 const WeatherCard = ({ location, search, data, setLocation }) => {
   return (
     <main className="container max-w-2xl font-poppins grid grid-flow-row md:grid-flow-col gap-4 px-4 text-textColor ">
-      <section className="text-center bg-grad  text-cyan-50  min-h-max rounded-lg p-30 ">
+      <section className="bg-gradient-to-r from-gradient1 via-gradient2 to-gradient3 text-center text-cyan-50 min-h-max rounded-lg p-30 ">
         <input
           className=" my-12 placeholder: text-placeColor placeholder:uppercase w-96 px-5 py-2 rounded-xl outline-none"
           type="text"
@@ -30,13 +30,13 @@ const WeatherCard = ({ location, search, data, setLocation }) => {
               >
                 {Math.round(data.main.temp)}°C
               </h2>
-              <section className="w-24 flex flex-col  justify-center pb-5">
+              <section className="w-24 flex flex-col  justify-center pb-5 items-center">
                 <img className="" src={Icon(data.weather[0].main)} alt="" />
                 <p className="  text-boxes text-2xl -mt-2 ">
                   {data.weather[0].main}
                 </p>
               </section>
-              <section className=" flex justify-around w-full p-4 text-boxes">
+              <section className=" flex justify-around w-full p-4 text-boxes py-12">
                 <article className="">
                   <span className="font-bold text-4xl">
                     {Math.round(data.main.temp_min)}°

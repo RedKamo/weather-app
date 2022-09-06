@@ -10,7 +10,10 @@ module.exports = {
       'placeColor': '#8C8AB1',
       'boxesColor': '#244365',
       'boxesText': '#1B6787',
-      'boxes': '#8A87AB'
+      'boxes': '#8A87AB',
+      'gradient1': '#45278B',
+      'gradient2': '#333075',
+      'gradient3': '#2e335a',
     },
     extend: {
       backgroundImage: theme => (
