@@ -21,7 +21,7 @@ module.exports = {
       },
     backgroundImage: theme => (
         {
-          'background': "url('./src/assets/background.jpg')",
+          'background': "url('/images/background.jpg')",
         }
       )
     },
