@@ -17,16 +17,11 @@ module.exports = {
       'textDate': '#398989',
     },
     fontFamily: {
-        'poppins': ['Poppins', 'sans-serif'],
         'syneFont' : ['Syne', 'sans-serif']
       },
     backgroundImage: theme => (
         {
-          'background': "url('./src/assets/back.jpg')",
-          'grad': "url('./src/assets/grad.png')",
-          'day': "url('./src/assets/as.jpg')",
-          'night': "url('./src/assets/esi.jpg')",
-          'rect': "url('./src/assets/rect.png')",
+          'background': "url('./src/assets/background.jpg')",
         }
       )
     },
