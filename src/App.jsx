@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
 import WeatherCard from "./components/WeatherCard";
+import { API_URL, MY_KEY } from "./api";
 
 function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=b10d31ee3d52af231d37e9960a5f899c&units=metric`;
-
+  const url = `${API_URL}/weather?q=${location}&appid=${MY_KEY}&units=metric`;
   const search = (e) => {
     if (e.key === "Enter") {
       axios.get(url).then((response) => {
@@ -17,8 +17,10 @@ function App() {
     }
   };
 
+  console.log(data);
+
   return (
-    <main className="bg-background  bg-no-repeat bg-cover grid min-h-screen place-items-center">
+    <main className="bg-background  bg-no-repeat bg-cover grid min-h-screen place-items-center font-syneFont">
       <WeatherCard
         search={search}
         location={location}

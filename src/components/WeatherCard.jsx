@@ -1,23 +1,27 @@
 import React from "react";
 import Icon from "./Icon";
 import EnterKey from "../assets/enkey.png";
+import { DateTime } from "luxon";
 
 const WeatherCard = ({ location, search, data, setLocation }) => {
+  const dt = DateTime.now();
   return (
-    <main className="container max-w-2xl font-poppins grid grid-flow-row md:grid-flow-col gap-4 px-4 text-textColor ">
-      <section className="bg-gradient-to-r from-gradient1 via-gradient2 to-gradient3 text-center text-cyan-50 min-h-max rounded-lg p-30 ">
-        <input
-          className=" my-12 placeholder: text-placeColor placeholder:uppercase w-96 px-5 py-2 rounded-xl outline-none"
-          type="text"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          placeholder="Enter Location"
-          onKeyPress={search}
-        />
-        <article className="text-center flex flex-col items-center mt-2 ">
+    <main className="container max-w-2xl font-syneFont grid grid-flow-row md:grid-flow-col gap-4 px-4 ">
+      <section className="  backdrop-blur-md bg-cardBack/10 text-center min-h-max rounded-xl p-30 border-2 border-cardBack">
+        <section className="px-4">
+          <input
+            className="w-full px-4 my-12 placeholder: text-placeColor placeholder:uppercase md:w-96  py-2 rounded-full outline-none"
+            type="text"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            placeholder="Enter Location"
+            onKeyPress={search}
+          />
+        </section>
+        <article className="text-center flex flex-col items-center mt-2  ">
           {data.main ? (
             <>
-              <p className="text-4xl text-boxes ">
+              <p className="text-2xl	 md:text-4xl text-white ">
                 {data.name},{data.sys.country}
               </p>
               <h2
@@ -30,14 +34,12 @@ const WeatherCard = ({ location, search, data, setLocation }) => {
               >
                 {Math.round(data.main.temp)}°C
               </h2>
-              <section className="w-24 flex flex-col  justify-center pb-5 items-center">
+              <section className="w-24 flex flex-col  justify-center pb-5 items-center text-white">
                 <img className="" src={Icon(data.weather[0].main)} alt="" />
-                <p className="  text-boxes text-2xl -mt-2 ">
-                  {data.weather[0].main}
-                </p>
+                <p className="  text-2xl -mt-2 ">{data.weather[0].main}</p>
               </section>
-              <section className=" flex justify-around w-full p-4 text-boxes py-12">
-                <article className="">
+              <section className="backdrop-blur-sm  bg-cardTemp/50 border-y-2 border-cardBack flex flex-col md:flex-row gap-8 justify-around w-full p-4 text-white py-12 ">
+                <article className=" ">
                   <span className="font-bold text-4xl">
                     {Math.round(data.main.temp_min)}°
                   </span>
@@ -56,10 +58,13 @@ const WeatherCard = ({ location, search, data, setLocation }) => {
                   <p>Max temp</p>
                 </article>
               </section>
+              <article className="w-full justify-center text-textDate flex text-3xl py-2">
+                <p>{dt.toLocaleString(DateTime.DATE_MED)}</p>
+              </article>
             </>
           ) : (
-            <section className="flex  items-center pb-24">
-              <h1 className=" text-slate-500 font-bold text-2xl flex justify-center items-center  text-boxes">
+            <section className="flex flex-col items-center pb-12">
+              <h1 className=" font-bold text-2xl flex justify-center items-center text-white">
                 Search for a location
                 <br />
                 and press 'Enter'
